@@ -1,0 +1,44 @@
+<?xml version="1.0" ?> 
+
+<!-- $Id: make.bkl,v 1.0 2005/05/11$ --> 
+
+<makefile>
+    
+    <!-- Additional include paths (include tag) -->
+
+    <set var="EXTRAINCLUDE"></set> 
+
+    <include file="c:/wxWidgets-2.6.1/build/bakefiles/wxpresets/presets/wx.bkl" /> 
+
+    <exe id="test" template="wx">
+        <app-type>gui</app-type> 
+        <debug-info>on</debug-info> 
+        <runtime-libs>static</runtime-libs> 
+
+        <include>
+            C:\portaudio_v19\pa_common
+        </include> 
+        <include>
+            C:\SigLib\include
+        </include> 
+        <include>
+            C:\SigLib\ngl
+        </include> 
+        <sources>
+            test.cpp
+            inifile.cpp
+			linectrl.cpp
+         </sources>
+
+         <wx-lib>core</wx-lib> 
+         <wx-lib>net</wx-lib> 
+         <wx-lib>base</wx-lib>
+ 
+         <wx-lib>adv</wx-lib> 
+         <sys-lib>c:\siglib\lib\borland\siglib</sys-lib> 
+         <sys-lib>C:\siglib\ngl\dspgraph</sys-lib> 
+         <sys-lib>C:\portaudio_v19\pa_win_wmme\portaudio</sys-lib> 
+
+         <win32-res>test.rc</win32-res>
+    </exe>
+</makefile>
